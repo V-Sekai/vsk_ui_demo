@@ -85,8 +85,6 @@ size_flags_vertical = 3
 theme_type_variation = &"MenuMarginContainer"
 
 [node name="TopLevelContent" type="Control" parent="Panel/Content/Body/Control/MarginContainer"]
-top_level = true
-clip_contents = true
 layout_mode = 2
 
 [node name="SubBody" type="VBoxContainer" parent="Panel/Content/Body/Control/MarginContainer/TopLevelContent"]

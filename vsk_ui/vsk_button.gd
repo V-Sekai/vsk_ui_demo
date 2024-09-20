@@ -29,14 +29,15 @@ func _get_minimum_size() -> Vector2:
 func _update_theme() -> void:
 	var shadow_offset_x: float = get_theme_constant("shadow_offset_x", "VSKButton")
 	var shadow_offset_y: float = get_theme_constant("shadow_offset_y", "VSKButton")
-	_button_drop_shadow.set_size(get_rect().size)
-	_button_drop_shadow.set_position(Vector2(shadow_offset_x, shadow_offset_y))
 	
 	var background_stylebox: StyleBox = get_theme_stylebox("background", "VSKButton")
 	_background.set("theme_override_styles/panel", background_stylebox)
 	
 	var thumbnail_background_stylebox: StyleBox = get_theme_stylebox("thumbnail_background", "VSKButton")
 	_thumbnail_background.set("theme_override_styles/panel", thumbnail_background_stylebox)
+
+	_button_drop_shadow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_button_drop_shadow.set_position(Vector2(shadow_offset_x, shadow_offset_y))
 
 func _process(_delta: float) -> void:
 	if _thumbnail_icon:
